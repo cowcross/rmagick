@@ -11,7 +11,7 @@
  ******************************************************************************/
 
 #include "rmagick.h"
-#include "magick/xwindow.h"     // XImageInfo
+#include "MagickCore/xwindow.h"     // XImageInfo
 
 /** Method that effects an image */
 typedef Image *(effector_t)(const Image *, const double, const double, ExceptionInfo *);
@@ -357,7 +357,7 @@ Image_adaptive_threshold(int argc, VALUE *argv, VALUE self)
 
 
 /**
- * Set the image composite mask. 
+ * Set the image composite mask.
  *
  * Ruby usage:
  *   - @verbatim Image#add_compose_mask(mask) @endverbatim
@@ -774,7 +774,7 @@ Image_aref(VALUE self, VALUE key_arg)
  *   - @verbatim Image#[:key] = attr @endverbatim
  *
  * Notes:
- *   - Specify attr=nil to remove the key from the list.  
+ *   - Specify attr=nil to remove the key from the list.
  *   - SetImageProperty normally APPENDS the new value to any existing value.
  *     Since this usage is tremendously counter-intuitive, this function always
  *     deletes the existing value before setting the new value.
@@ -2590,7 +2590,7 @@ Image_color_histogram(VALUE self)
  * Image_color_profile_eq and Image_iptc_profile_eq.
  *
  * No Ruby usage (internal function)
- * 
+ *
  * @param self this object
  * @param name profile name
  * @param profile an IPTC or ICC profile
@@ -3247,7 +3247,7 @@ Image_compose_eq(VALUE self, VALUE compose_arg)
  * @param argc number of input arguments
  * @param argv array of input arguments
  * @param self this object
- * @param channels 
+ * @param channels
  * @return self if bang, otherwise new composited image
  * @see Image_composite
  * @see Image_composite_bang
@@ -5021,7 +5021,7 @@ Image_display(VALUE self)
  *
  * Ruby usage:
  *   - @verbatim Image#dispose @endverbatim
- * 
+ *
  * @param self this object
  * @return the dispose
  */
@@ -9154,7 +9154,7 @@ Image_negate_channel(int argc, VALUE *argv, VALUE self)
  * Notes:
  *   - Actually we defer allocating the image until the initialize method so we
  *     can run the parm block if it's present.
- * 
+ *
  * @param class the Ruby class for an Image
  * @return a newly allocated image
  */
@@ -12904,7 +12904,7 @@ Image_stereo(VALUE self, VALUE offset_image_arg)
  *
  * Notes:
  *   - Based on Magick++'s Magick::Magick::classType
- * 
+ *
  * @param self this object
  * @return the storage class
  */
@@ -14717,7 +14717,7 @@ Image_wave(int argc, VALUE *argv, VALUE self)
  *     the change to occur less rapidly. The resulting reflection will be
  *     taller. If the rate is exactly 0 then the amount of transparency doesn't
  *     change at all.
- * 
+ *
  * @param argc number of input arguments
  * @param argv array of input arguments
  * @param self this object

@@ -14,7 +14,7 @@ gcc `Magick-config --cflags --cppflags` #{name}.c `Magick-config --ldflags --lib
 #include <sys/types.h>
 #include <string.h>
 #include <stdlib.h>
-#include <magick/api.h>
+#include <MagickCore/api.h>
 
 
 int main(int argc,char **argv)

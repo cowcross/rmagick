@@ -875,7 +875,7 @@ rm_get_property(const Image *img, const char *property)
  * No Ruby usage (internal function)
  *
  * @param image the image
- * @param property the property name 
+ * @param property the property name
  * @param value the property value
  * @return true if successful, otherwise false
  */
@@ -1164,7 +1164,7 @@ void rm_sync_image_options(Image *image, Info *info)
  *
  * @param image the image
  * @return string representation of exif properties
- * @see magick/identify.c in ImageMagick
+ * @see MagickCore/identify.c in ImageMagick
  */
 VALUE
 rm_exif_by_entry(Image *image)
@@ -1253,7 +1253,7 @@ rm_exif_by_entry(Image *image)
  *
  * @param image the image
  * @return string representation of exif properties
- * @see magick/identify.c in ImageMagick
+ * @see MagickCore/identify.c in ImageMagick
  */
 VALUE
 rm_exif_by_number(Image *image)
