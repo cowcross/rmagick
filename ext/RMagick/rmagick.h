@@ -13,6 +13,9 @@
 #ifndef _RMAGICK_H_
 #define _RMAGICK_H_
 
+#define IM_VERSION_SIX_AND_LOWER "magick/magickcore.h"
+#define IM_VERSION_SEVEN_AND_HIGHER "MagickCore/MagickCore.h"
+
 //! Suppress warnings about deprecated functions on Windows
 #define _CRT_SECURE_NO_DEPRECATE 1
 
@@ -40,8 +43,17 @@
 #undef PACKAGE_TARNAME
 #undef WORDS_BIGENDIAN
 
+#if !IM_VERSION_SIX_AND_LOWER
 #include "MagickCore/MagickCore.h"
-#include "MagickCore/magick-config.h"
+#include "MagickWand/MAgickWand.h"
+#include "MagickCore/MagickCore-config"
+#include "MagickWand/MagickWand-config"
+#endif
+
+#if defined(IM_VERSION_SIX_AND_LOWER)
+#include "magick/MagickCore.h"
+#include "magick/magick-config.h"
+#endif
 
 // Undef ImageMagick's versions of these symbols
 #undef PACKAGE_STRING
