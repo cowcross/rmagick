@@ -39,9 +39,7 @@ module RMagick
       headers << 'stdint.h' if have_header('stdint.h')  # defines uint64_t
       headers << 'sys/types.h' if have_header('sys/types.h')
 
-      if have_header('wand/MagickWand.h')
-        headers << 'wand/MagickWand.h'
-      elsif have_header('MagickWand/MagickWand.h') # ImageMagick 7
+      if have_header('MagickWand/MagickWand.h')
         headers << 'MagickWand/MagickWand.h'
       else
         exit_failure "\nCan't install RMagick #{RMAGICK_VERS}. Can't find MagickWand.h."
